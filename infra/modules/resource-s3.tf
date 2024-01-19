@@ -29,12 +29,12 @@ resource "aws_s3_object" "upload_assets_images_files" {
 }
 
 resource "aws_s3_object" "upload_pdfs" {
-  for_each               = fileset("${var.public_path}/../../files", "**")
+  for_each               = fileset("${var.public_path}/files", "**")
   bucket                 = aws_s3_bucket.cdn_bucket.bucket
   key                    = "/${each.key}"
-  source                 = "${var.public_path}/../../files/${each.value}"
+  source                 = "${var.public_path}/files/${each.value}"
   content_type           = "application/pdf"
-  etag                 = filemd5("${var.public_path}/../../files/${each.key}")
+  etag                 = filemd5("${var.public_path}/files/${each.key}")
 }
 
 resource "aws_s3_object" "upload_html" {
