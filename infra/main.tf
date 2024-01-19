@@ -25,4 +25,7 @@ module "cloud_resume" {
   #  S3
   bucket_name         = var.bucket_name
   public_path         = var.public_path
+
+  # CloudFront
+  cdn_alias = var.cdn_alias
 }
