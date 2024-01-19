@@ -26,6 +26,10 @@ resource "aws_s3_object" "upload_assets_images_files" {
   source                 = "${var.public_path}/css_js_files/${each.value}"
   content_type           = lookup(local.mime_types, regex("\\.[^.]+$", each.value), "text/html")
   etag                 = filemd5("${var.public_path}/css_js_files/${each.key}")
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_s3_object" "upload_pdfs" {
@@ -35,6 +39,10 @@ resource "aws_s3_object" "upload_pdfs" {
   source                 = "${var.public_path}/files/${each.value}"
   content_type           = "application/pdf"
   etag                 = filemd5("${var.public_path}/files/${each.key}")
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_s3_object" "upload_html" {
@@ -44,4 +52,8 @@ resource "aws_s3_object" "upload_html" {
   source                 = "${var.public_path}/html_files/${each.value}"
   content_type           = "text/html"
   etag                 = filemd5("${var.public_path}/html_files/${each.key}")
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
