@@ -12,3 +12,8 @@ variable "cdn_alias" {
   description = "The name of the custom domain associated with Route53 and CloudFront"
   type = string
 }
+
+variable "my_email" {
+  description = "Email address associated with the SNS subscription"
+  type = string
+}

@@ -28,4 +28,7 @@ module "cloud_resume" {
 
   # CloudFront
   cdn_alias = var.cdn_alias
+
+  #SNS
+  my_email = var.my_email
 }
