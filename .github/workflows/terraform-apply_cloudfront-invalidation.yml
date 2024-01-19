@@ -10,7 +10,7 @@ env:
   TF_CLOUD_ORGANIZATION: "mmaratita-org"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "michaelmaratita-github-actions"
-  CONFIG_DIRECTORY: "./infra/"
+  CONFIG_DIRECTORY: "./"
 
 jobs:
   terraform:
