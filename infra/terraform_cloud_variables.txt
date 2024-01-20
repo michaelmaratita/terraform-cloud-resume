@@ -1,0 +1,32 @@
+bucket_name         : my_bucket_name_VERY_UNIQUE
+cdn_alias           : example.com
+public_path         :  ../public/
+my_email            : email@example.com
+
+api_lambda : {
+  type = "object"
+  sns = {
+    api_path_part       = "mail"
+    function_name       = "Send_Mail"
+    lambda_description  = "Receive JSON payload from Resume Site form and forward SNS message"
+    lambda_folder       = "../lambda/Contact_Me"
+    lambda_resource     = "*"
+    policy_name         = "POL_Site_to_SNS"
+    policy_actions      = [
+      "sns:Publish",
+      "sns:ListTopics"
+    ]
+  }
+  dynamodb = {
+    api_path_part       = "viewers"
+    function_name       = "Update_Table"
+    lambda_description  = "Update DynamoDB Table and Return Value"
+    lambda_folder       = "../lambda/Update_Table"
+    lambda_resource     = "*"
+    policy_name         = "POL_Site_to_DynamoDB"
+    policy_actions      = [
+      "dynamodb:GetItem",
+      "dynamodb:UpdateItem"
+    ]
+  }
+}
