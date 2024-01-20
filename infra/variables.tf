@@ -17,3 +17,27 @@ variable "my_email" {
   description = "Email address associated with the SNS subscription"
   type = string
 }
+
+variable "api_lambda" {
+  description = "Objects for apigateway-method_lambda module"
+  type = object({
+    sns = object({
+      api_path_part       = string
+      function_name       = string
+      lambda_description  = string
+      lambda_folder       = string
+      lambda_resource     = string
+      policy_name         = string
+      policy_actions      = list(string)
+    })
+    dynamodb = object({
+      api_path_part       = string
+      function_name       = string
+      lambda_description  = string
+      lambda_folder       = string
+      lambda_resource     = string
+      policy_name         = string
+      policy_actions      = list(string)
+    })
+  })
+}
