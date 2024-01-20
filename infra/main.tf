@@ -44,7 +44,7 @@ module "cloud_resume" {
 }
 
 module "apigateway-lambda" {
-  source = "./terraform-modules/apigateway-method_lambda/"
+  source = "./modules/apigateway-method_lambda/"
   
   rest_api            = module.cloud_resume.rest_api
   rest_api_parent     = module.cloud_resume.rest_api_parent
