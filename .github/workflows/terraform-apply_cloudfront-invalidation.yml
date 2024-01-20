@@ -65,6 +65,10 @@ jobs:
         with:
           cli_config_credentials_token:  ${{ secrets.TF_API_TOKEN }}
 
+      - name: Change Directory
+        id: cd
+        run: cd ./infra/
+
       - name: Terraform Init
         id: init
         run: terraform init
