@@ -31,6 +31,12 @@ sr.reveal('.contact .heading', {delay: 200, origin: 'top'})
 sr.reveal('.input-box', {delay: 200, origin: 'left'})
 sr.reveal('.textarea-field', {delay: 200, origin: 'right'})
 
+sr.reveal('.certs .heading', {delay: 200, origin: 'top'})
+sr.reveal('#cert-1', {delay: 750, origin: 'left'})
+sr.reveal('#cert-2', {delay: 750, origin: 'top'})
+sr.reveal('#cert-3', {delay: 750, origin: 'right'})
+sr.reveal('#cert-4', {delay: 750, origin: 'bottom'})
+
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');

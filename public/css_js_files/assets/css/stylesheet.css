@@ -372,6 +372,54 @@ section.work {
    width: 60%;
 }
 
+section.certs {
+   margin-top: 6rem;
+   background: var(--bg-color);
+   color: var(--second-bg-color);
+   padding-left: 5rem;
+   padding-right: 5rem;
+   padding-bottom: 7rem;    
+}
+
+.credly-row {
+   display: flex;
+   padding-bottom: 3rem;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.credly-col {
+   background-color: #dadada;
+   flex-direction: column;
+   height: 240px;
+   width: 250px;
+}
+
+.credly-col a {
+   text-decoration: none;
+   color: #585858;
+}
+
+.credly-col img {
+   width: 105px;
+   margin-top: 20px;
+   margin-left: 70px;
+}
+
+.cert-name {
+   margin-top: 20px;
+   margin-left: 42px;
+   justify-content: space-evenly;
+   color: #535353;
+}
+.cert-issuer {
+   margin-top: 10px;
+   margin-left: 20px;
+   font-size: 12.5px;
+   color: #535353;
+   font-style: italic;
+}
+
 .footer {
    display: flex;
    justify-content: space-between;
@@ -671,6 +719,15 @@ form button {
        width: 100%;
        height: auto;
    }
+   section.certs{
+      padding: 10px 4%;
+  }
+  .credly-row {
+      display: grid;
+  }
+  .credly-col {
+      margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -801,6 +858,9 @@ form button {
    .home-text span{
        font-size: 10.28px;
    }
+   section.certs .heading{
+      font-size: 2.3rem;
+  }
 }
 
 @keyframes imgg {

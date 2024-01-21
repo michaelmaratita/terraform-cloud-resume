@@ -20,6 +20,7 @@
 			<nav class="navbar">
 				<a href="/" >Home</a>
 				<a href="/#skills">Skills</a>
+                <a href="/#certs">Certifications</a>
 				<a href="./work">Work</a>
 				<a href="https://blog.michaelmaratita.com">Projects</a>
 				<a href="./contact" class="active">Contact</a>
