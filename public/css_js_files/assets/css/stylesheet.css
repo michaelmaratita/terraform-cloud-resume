@@ -137,13 +137,22 @@ section {
    margin: 23px 0;
 }
 
-.home-text p {
+.home-text p{
    font-size: var(--p-font);
    font-weight: 400;
    color: #c3c3c3;
    line-height: 30px;
    mask-border: 50px;
    margin-bottom: 30px;
+}
+
+.home-text p a {
+   color: var(--main-color);
+   font-weight: 700;
+}
+
+.home-text p a:hover {
+   color: #c3c3c3;
 }
 
 .btn {
@@ -542,6 +551,10 @@ section.certs {
    font-size: 20px;
    padding-top: .5rem;
    list-style-type: disc;
+}
+
+.work-content .content span{
+   font-weight: 900;
 }
 
 .work-content .content ul {

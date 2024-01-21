@@ -38,26 +38,42 @@
                     <div class="work-box">
                         <div class="work-content">
                             <div class="content">
-                                <div class="year"><i class='bx bx-calendar'></i> July 2021 - Present</div>
+                                <div class="year"><i class='bx bx-calendar'></i> January 2024 - Present</div>
+                                <h3><img src="./images/company_logos/gotyto_logo.jpg" class="company_logo"> Tyto Athene</h3>
+                                <h4>Sr. Windows Systems Administrator</h4>
+                                <ul>
+                                    <li>&#42;Contract Transition&#42;</li>
+                                    <li>Facilitating smooth System Migration from Server 2019 to Server 2022.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <div class="content">
+                                <div class="year"><i class='bx bx-calendar'></i> July 2021 - January 2024</div>
                                 <h3><img src="./images/company_logos/maximus_logo.jpg" class="company_logo"> Maximus Inc.</h3>
                                 <h4>Sr. Windows Systems Administrator</h4>
                                 <ul>
-                                    <li>Completed multiple tech refreshes from Windows Server 2016 to Windows Server 2022</li>
-									<li>Experienced with Active Directory deployments via Server Manager or PowerShell</li>
-									<li>Developed custom PowerShell functions for STIG checklist automation for Windows Server 2016, Windows Server 2019, Windows Server 2022, Internet Explorer, Windows Defender, and IIS 10.0</li>
-									<li>Experienced with EC2 deployments, Volume management, and AWS Backup</li>
-									<li>Configured CloudWatch Alarms to monitor resource utilization, and stopped services</li>
-									<li>Developed automated startup and shutdown Lambda functions using Python 3.9 for AWS EC2 instances</li>
-									<li>Configured Step Functions and Eventbridge rules to execute scheduled Lambda functions</li>
-									<li>Configured Simple Notification Service (SNS) for EC2 notification statuses</li>
-									<li>Created IAM roles with fine-grained permission sets for end-users and service</li>
-									<li>Documented Lambda functionality in Gitlabs repository</li>
-									<li>Configured Group Policies in accordance with DISA and company guidelines</li>
-									<li>Implemented UEFI, NitroTPM, and Credential Guard on Windows Servers. Remediated CAT I vulnerability</li> 
-									<li>Assisted the DHA Imaging team with proper Windows Server Configurations for future IaaS customers. </li>
-									<li>Automated CSR process for SSL certificates via PowerShell</li>
-									<li>Completes monthly patch management operations and vulnerability configurations</li>
-									<li>Intermediary between the customer base and DHA DataCenter Operations (DCOPS) on access issues, or support requests</li>
+                                    <li>Orchestrated a seamless server tech refresh, migrating systems from Windows Server 2016 to Windows Server
+                                        2019.</li>
+									<li>Proficient in deploying and managing Active Directory through both Server Manager and PowerShell.</li>
+									<li>Engineered a tailored PowerShell function for automating STIG checklist processes, covering Windows Server
+                                        2016, Windows Server 2019, Internet Explorer, Windows Defender, and IIS 10.0.</li>
+									<li>Adept in EC2 deployments, volume management, and implementing AWS Backup solutions.</li>
+									<li>Implemented CloudWatch Alarms for vigilant resource monitoring and executed service stoppages when
+                                        necessary.</li>
+									<li>Developed automated startup and shutdown Lambda functions using Python 3.9 for AWS EC2 instances.</li>
+									<li>Configured Step Functions and EventBridge rules for scheduling and executing Lambda functions.</li>
+									<li>Utilized Simple Notification Service (SNS) for real-time EC2 notification statuses.</li>
+									<li>Crafted fine-grained IAM roles for end-users and services, ensuring precise permission sets.</li>
+									<li>Leveraged GitLab repository for version control and comprehensive documentation.</li>
+									<li>Applied Group Policies adhering to DISA and company guidelines.</li>
+									<li>Implemented UEFI, NitroTPM, and Credential Guard on Windows Servers, streamlining configurations for
+                                        future IaaS customers and remediating CAT I vulnerabilities.</li> 
+									<li>Automated the CSR process for SSL certificates using PowerShell.</li>
+									<li>Provides technical support for Application Administrators for system upgrades.</li>
+									<li>Led monthly patch management operations and configured vulnerability settings.</li>
+									<li>Served as an intermediary between the customer base and DHA Datacenter Operations (DCOPS) for access
+                                        issues and support requests.</li>
                                 </ul>
                             </div>
                             
@@ -68,12 +84,12 @@
                                 <h3><img src="./images/company_logos/peraton_logo.jpg" class="company_logo"> Peraton Inc.</h3>
                                 <h4>Web and Database Administrator</h4>
                                 <ul>
-                                    <li>Deploy and Manage AWS EC2 instances and S3 buckets</li>
-									<li>Supported SolarWinds vulnerability for site customer</li>
-									<li>Provided monthly maintenance for Microsoft products and COTS software</li>
-									<li>Deployed Windows Server 2019 and SQL Server 2019</li>
-									<li>Initial Development for STIG checklist automation through PowerShell and SQL Server</li>
-									<li>Upgraded BMC Remedy ITSM to meet lifecycle management timelines</li>
+                                    <li>Deploy and Manage AWS EC2 instances and S3 buckets.</li>
+									<li>Supported SolarWinds vulnerability for site customer.</li>
+									<li>Provided monthly maintenance for Microsoft products and COTS software.</li>
+									<li>Deployed Windows Server 2019 and SQL Server 2019.</li>
+									<li>Initial Development for STIG checklist automation through PowerShell and SQL Server.</li>
+									<li>Upgraded BMC Remedy ITSM to meet lifecycle management timelines.</li>
                                 </ul>
                             </div>
                         </div>
@@ -84,16 +100,16 @@
                                 <h3><img src="./images/company_logos/northrop_grumman_corporation_logo.jpg" class="company_logo"> Northrop Grumman Corp.</h3>
                                 <h4>Web and Database Administrator</h4>
                                 <ul>
-                                    <li>Created government approved password manager for team through PowerShell and SQL Server</li>
-									<li>Upgraded and Administered 70+ Windows Servers across multiple networks</li>
-									<li>Managed 40 SQL instances. Provided monitoring and tuning for databases, and security control measures</li>
-									<li>Provided disaster recovery for managed servers through SnapCenter</li>
-									<li>Liasoned SSL certificate requests. Created, processed, and installed Site and SQL certificates</li>
-									<li>Administered COTS applications (SolarWinds, BMC Remedy, SnapCenter, Varonis, and Blackboard)</li>
-									<li>Remedied vulnerabilities given through ACAS findings</li>
-									<li>Completed STIG hardening for Windows Server, IIS, and SQL Server</li>
-									<li>Maintains system documentation and configuration information</li>
-									<li>Developed/updated Tactics, Techniques and Procedures documentation</li>
+                                    <li>Created government approved password manager for team through PowerShell and SQL Server.</li>
+									<li>Upgraded and Administered 70+ Windows Servers across multiple networks.</li>
+									<li>Managed 40 SQL instances. Provided monitoring and tuning for databases, and security control measures.</li>
+									<li>Provided disaster recovery for managed servers through SnapCenter.</li>
+									<li>Liasoned SSL certificate requests. Created, processed, and installed Site and SQL certificates.</li>
+									<li>Administered COTS applications (SolarWinds, BMC Remedy, SnapCenter, Varonis, and Blackboard).</li>
+									<li>Remedied vulnerabilities given through ACAS findings.</li>
+									<li>Completed STIG hardening for Windows Server, IIS, and SQL Server.</li>
+									<li>Maintains system documentation and configuration information.</li>
+									<li>Developed/updated Tactics, Techniques and Procedures documentation.</li>
                                 </ul>
                             </div>
                         </div>
@@ -104,18 +120,18 @@
                                 <h3><img src="./images/company_logos/northrop_grumman_corporation_logo.jpg" class="company_logo"> Northrop Grumman Corp.</h3>
                                 <h4>Computer Systems Analyst</h4>
                                 <ul>
-                                    <li>Provided administrative support in Active Directory, DHCP, and DNS</li>
-									<li>Ensured system security configuration through SCAP verification of system hardening in compliance with DISA STIG</li>
-									<li>Ensured network audit logging and security configuration in accordance with Defense Security Service requirements</li>
-									<li>Windows Operating System installation and Program specific baseline configurations</li>
-									<li>Manages COTS installations for Program requirements</li>
-									<li>Knowledge of Disaster Recovery options, processes and procedures</li>
-									<li>Provided support for Communications, Navigation and Identification (CNI) test equipment; providing networking capabilities and meeting DoD system requirements</li>
-									<li>Extensive knowledge on operating system upgrading, imaging and configuration management</li>
-									<li>Experience in deploying and upgrading SQL databases with SQL Server 2008 and SQL Server 2012</li>
-									<li>Basic knowledge of Risk Management Framework implementation</li>
-									<li>Experience working on Joint Strike Fighter programs</li>
-									<li>Provided Patch Management through WSUS and SolarWinds Patch Management solution</li>
+                                    <li>Provided administrative support in Active Directory, DHCP, and DNS.</li>
+									<li>Ensured system security configuration through SCAP verification of system hardening in compliance with DISA STIG.</li>
+									<li>Ensured network audit logging and security configuration in accordance with Defense Security Service requirements.</li>
+									<li>Windows Operating System installation and Program specific baseline configurations.</li>
+									<li>Manages COTS installations for Program requirements.</li>
+									<li>Knowledge of Disaster Recovery options, processes and procedures.</li>
+									<li>Provided support for Communications, Navigation and Identification (CNI) test equipment; providing networking capabilities and meeting DoD system requirements.</li>
+									<li>Extensive knowledge on operating system upgrading, imaging and configuration management.</li>
+									<li>Experience in deploying and upgrading SQL databases with SQL Server 2008 and SQL Server 2012.</li>
+									<li>Basic knowledge of Risk Management Framework implementation.</li>
+									<li>Experience working on Joint Strike Fighter programs.</li>
+									<li>Provided Patch Management through WSUS and SolarWinds Patch Management solution.</li>
                                 </ul>
                             </div>
                         </div>
@@ -126,12 +142,12 @@
                                 <h3><img src="./images/company_logos/usaf.jpg" class="company_logo"> United States Air Force</h3>
                                 <h4>Client Service Center Supervisor</h4>
                                 <ul>
-                                    <li>Provided Tier 1 customer service for 4 organizations/750+ personnel; managing trouble ticketing requests/ averaging 60 incidents daily across 6 network enclaves</li>
-									<li>Recognized and coined by USAF HQ/ A2 (Intelligence) Commander</li>
-									<li>Responsible for managing 5 trouble ticketing systems across 3 network classifications</li>
-									<li>Maintained account creation, deprovisions and deletions across 5 network platforms though Microsoft Active Directory Users and Computers, NetIQ Directory and Resource Administration, and UNIX account administration/LDAP</li>
-									<li>Coordinated and disseminated authorized network outages for 2 enterprise networks and 2 globally distributed networks. Coordinated installation, scheduling and upgrades for $500M DCGS-4 Weapon System</li>
-									<li>Maintained Access database outage reporting, knowledge base entries and daily operations updates, reporting and restoral processes</li>
+                                    <li>Provided Tier 1 customer service for 4 organizations/750+ personnel; managing trouble ticketing requests/ averaging 60 incidents daily across 6 network enclaves.</li>
+									<li>Recognized and coined by USAF HQ/ A2 (Intelligence) Commander.</li>
+									<li>Responsible for managing 5 trouble ticketing systems across 3 network classifications.</li>
+									<li>Maintained account creation, deprovisions and deletions across 5 network platforms through Microsoft Active Directory Users and Computers, and UNIX account administration/LDAP.</li>
+									<li>Coordinated and disseminated authorized network outages for 2 enterprise networks and 2 globally distributed networks. Coordinated installation, scheduling and upgrades for $500M DCGS-4 Weapon System.</li>
+									<li>Maintained Access database outage reporting, knowledge base entries and daily operations updates, reporting and restoral processes.</li>
                                 </ul>
                             </div>
                         </div>
@@ -142,11 +158,11 @@
                                 <h3><img src="./images/company_logos/usaf.jpg" class="company_logo"> United States Air Force</h3>
                                 <h4>Cyberspace Systems Supervisor</h4>
                                 <ul>
-                                    <li>Performed UNIX database and global zone administration for $500M DCGS-4 Weapon System</li>
-									<li>Provided troubleshooting for 37 UNIX and Windows servers; supervised and managed UNIX workstation maintenance inspections, updated baseline configurations and monitor calibrations</li>
-									<li>Highly driven and motivated to succeed; graduated top 5% in Airman Leadership School, awarded Distinguished Graduate, awarded 2015 Squadron NCO of the Year, and Coined by Command Chief for excellence</li>
-									<li>Managed 6 personnel shift; trained junior enslisted airmen on daily tasks and basic troubleshooting logic</li>
-									<li>Managed junior enlisted upgrade training plans; ensured timely completions with 100% pass rate</li>
+                                    <li>Performed UNIX database and global zone administration for $500M DCGS-4 Weapon System.</li>
+									<li>Provided troubleshooting for 37 UNIX and Windows servers; supervised and managed UNIX workstation maintenance inspections, updated baseline configurations and monitor calibrations.</li>
+									<li>Highly driven and motivated to succeed; graduated top 5% in Airman Leadership School, awarded Distinguished Graduate, awarded 2015 Squadron NCO of the Year, and Coined by Command Chief for excellence.</li>
+									<li>Managed 6 personnel shift; trained junior enslisted airmen on daily tasks and basic troubleshooting logic.</li>
+									<li>Managed junior enlisted upgrade training plans; ensured timely completions with 100% pass rate.</li>
                                 </ul>
                             </div>
                         </div>
@@ -157,11 +173,11 @@
                                 <h3><img src="./images/company_logos/usaf.jpg" class="company_logo"> United States Air Force</h3>
                                 <h4>Global Command and Control Systems (GCCS) Administrator</h4>
                                 <ul>
-                                    <li>Provided Tier 1 support to 900+ customer base</li>
-									<li>Maintained Citrix based applications/chat tools for cross-organization coordination; mIRC</li>
-									<li>Assisted in maintaining and administrating 4 UNIX Global Zones</li>
-									<li>Extended hardware life cycles though maintenance inspections ensuring ESD and corrosion control preventative measures have been accomplished</li>
-									<li>Coordinated operations training to 14 coalition partner; lauded and awarded Amn of the Qtr</li>
+                                    <li>Provided Tier 1 support to 900+ customer base.</li>
+									<li>Maintained Citrix based applications/chat tools for cross-organization coordination; mIRC.</li>
+									<li>Assisted in maintaining and administrating 4 UNIX Global Zones.</li>
+									<li>Extended hardware life cycles though maintenance inspections ensuring ESD and corrosion control preventative measures have been accomplished.</li>
+									<li>Coordinated operations training to 14 coalition partner; lauded and awarded Amn of the Qtr.</li>
                                 </ul>
                             </div>
                         </div>
@@ -170,15 +186,15 @@
                             <div class="content">
                                 <div class="year"><i class='bx bx-calendar'></i> May 2010 &#8722; October 2014</div>
                                 <h3><img src="./images/company_logos/usaf.jpg" class="company_logo"> United States Air Force</h3>
-                                <h4>Monitoring Management Technicianr</h4>
+                                <h4>Monitoring Management Technician</h4>
                                 <ul>
-                                    <li>Provided server performance monitoring and tuning support for 750K user enterprise network valued at $1.5B; dedication to excellence resulted in 2011 Airman of the Year award</li>
-									<li>Managed Active Directory; coordinated threshold monitoring for AD and MS Exchange</li>
-									<li>Upgraded Remedy ticketing system; transcribed 500+ legacy tickets to updated system/performed and scheduled server back-ups</li>
-									<li>Authored PowerShell script monitoring 20 General officers/4 Colonel account provisions; provided Active Directory team situational awareness for high-visibility personnel</li>
-									<li>Approval member for enterprise change management processes for 46 bases effected by NetIQ AppManager and EMC SMARTS</li>
-									<li>Authored and maintained PowerShell script that enabled remote software installations for NetIQ AppManager & EMC SMARTS; administrated for 46 geographically distributed bases</li>
-									<li>Utilized Microsoft SCCM to deliver monthly security patches and software updates across 2 enterprise networks</li>
+                                    <li>Provided server performance monitoring and tuning support for 750K user enterprise network valued at $1.5B; dedication to excellence resulted in 2011 Airman of the Year award.</li>
+									<li>Managed Active Directory; coordinated threshold monitoring for AD and MS Exchange.</li>
+									<li>Upgraded Remedy ticketing system; transcribed 500+ legacy tickets to updated system/performed and scheduled server back-ups.</li>
+									<li>Authored PowerShell script monitoring 20 General officers/4 Colonel account provisions; provided Active Directory team situational awareness for high-visibility personnel.</li>
+									<li>Approval member for enterprise change management processes for 46 bases effected by NetIQ AppManager and EMC SMARTS.</li>
+									<li>Authored and maintained PowerShell script that enabled remote software installations for NetIQ AppManager & EMC SMARTS; administrated for 46 geographically distributed bases.</li>
+									<li>Utilized Microsoft SCCM to deliver monthly security patches and software updates across 2 enterprise networks.</li>
                                 </ul>
                             </div>
                         </div>
