@@ -254,7 +254,8 @@ section.work {
 }
 
 .skills span,
-.contact span {
+.contact span,
+.certs span {
    color: var(--main-color);
 }
 
