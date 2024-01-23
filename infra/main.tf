@@ -1,24 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.31.0"
-    }
-
-  }
-  cloud {
-    organization = "mmaratita-org"
-
-    workspaces {
-      name = "michaelmaratita-github-actions"
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-west-1"
-}
-
 module "cloud_resume" {
   source = "./modules/"
 
@@ -41,6 +20,7 @@ module "cloud_resume" {
   sns_method               = module.apigateway-lambda["sns"].method
   sns_lambda_integration   = module.apigateway-lambda["sns"].lambda_integration
   sns_integration_response = module.apigateway-lambda["sns"].integration_response
+  caller_identity          = data.aws_caller_identity.current.account_id
 }
 
 module "apigateway-lambda" {
@@ -58,4 +38,5 @@ module "apigateway-lambda" {
   lambda_resource     = each.value.lambda_resource
   policy_name         = each.value.policy_name
   policy_actions      = each.value.policy_actions
+  caller_identity          = data.aws_caller_identity.current.account_id
 }

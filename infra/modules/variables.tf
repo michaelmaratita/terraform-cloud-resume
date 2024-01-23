@@ -57,3 +57,7 @@ variable "db_integration_response" {
   description = "API Gateway DynamoDB Resource Integration Response for use for API Gateway Deployment"
   type = string
 }
+
+variable "caller_identity" {
+  type = string
+}
