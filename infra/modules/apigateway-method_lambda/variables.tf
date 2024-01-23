@@ -47,3 +47,7 @@ variable "lambda_resource" {
   description = "ARN of the allowed resources for IAM Policy"
   type = string
 }
+
+variable "caller_identity" {
+  type = string
+}
