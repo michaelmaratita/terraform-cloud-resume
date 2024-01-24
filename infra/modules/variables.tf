@@ -59,5 +59,6 @@ variable "db_integration_response" {
 }
 
 variable "caller_identity" {
+  description = "Passed variable from data.aws_caller_identity"
   type = string
 }
