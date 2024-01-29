@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.31.0"
     }
 
@@ -18,5 +18,3 @@ terraform {
 provider "aws" {
   region = "us-west-1"
 }
-
-data "aws_caller_identity" "current" {}
