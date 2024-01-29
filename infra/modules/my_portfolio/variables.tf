@@ -178,10 +178,10 @@ variable "bucket_policy_sid" {
   type = string
 }
 
-variable "assets_path" {
-  description = "Relative path for assets files, e.g. CSS, JavaScript, etc."
-  type = string
-}
+# variable "assets_path" {
+#   description = "Relative path for assets files, e.g. CSS, JavaScript, etc."
+#   type = string
+# }
 
 variable "html_path" {
   description = "Relative path for HTML files"

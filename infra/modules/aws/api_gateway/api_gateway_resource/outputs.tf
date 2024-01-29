@@ -1,4 +1,9 @@
-output "integration_response" {
-  description = "ID for API Gateway integration response"
-  value = aws_api_gateway_integration_response.IntegrationResponse.id
+output "resource_id" {
+  description = "Output API Gateway Resource ID for use for API Gateway Deployment"
+  value = aws_api_gateway_resource.resource.id
+}
+
+output "path" {
+  description = "Path value for API Gateway Resource"
+  value = aws_api_gateway_resource.resource.path
 }
