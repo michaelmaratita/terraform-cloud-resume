@@ -1,42 +1,75 @@
-module "cloud_resume" {
-  source = "./modules/"
+module "resume_site" {
+  source = "./modules/my_portfolio"
 
-  #  S3
-  bucket_name         = var.bucket_name
-  public_path         = var.public_path
-
-  # CloudFront
-  cdn_alias = var.cdn_alias
-
-  #SNS
-  my_email = var.my_email
+  # AWS Certificate Manager (ACM)
+  my_domain                 = var.my_domain
+  subject_alternative_names = "*.${var.my_domain}"
 
   # API Gateway
-  db_api_resource          = module.apigateway-lambda["dynamodb"].api_resource
-  db_method                = module.apigateway-lambda["dynamodb"].method
-  db_lambda_integration    = module.apigateway-lambda["dynamodb"].lambda_integration
-  db_integration_response  = module.apigateway-lambda["dynamodb"].integration_response
-  sns_api_resource         = module.apigateway-lambda["sns"].api_resource
-  sns_method               = module.apigateway-lambda["sns"].method
-  sns_lambda_integration   = module.apigateway-lambda["sns"].lambda_integration
-  sns_integration_response = module.apigateway-lambda["sns"].integration_response
-  caller_identity          = data.aws_caller_identity.current.account_id
-}
+  api_name = var.api_name
+  api_description = var.api_description
+  api_types = ["REGIONAL"]
+  api_domain_name = var.api_domain
+  dynamodb_path_part = var.api_db
+  sns_path_part = var.api_sns
+  http_method = "POST"
 
-module "apigateway-lambda" {
-  source = "./modules/apigateway-method_lambda/"
+  # CloudFront 
+  origin_access_name = "OAC ${var.bucket_name}"
+  origin_access_description = "Original Access Controls for Static Website Hosting: ${var.bucket_name}"
+  cloudfront_comment = "Static website hosting for ${var.bucket_name}"
+  origin_id = var.origin_id
+
+  # DynamoDB
+  table_name = var.table_name
+  billing_mode = "PROVISIONED"
+  read_capacity = 5
+  write_capacity = 5
+  hash_key = var.hash_key
+  type = "N"
+  attribute = "TimeToExist"
+  environment = "Production"
+  table_item = var.table_item
+
+  # IAM 
+  dynamodb_policy_name = var.iam_dynamodb_policy
+  sns_policy_name = var.iam_sns_policy
+
+  # Lambda
+  dynamodb_description = var.lambda_db_desc
+  dynamodb_function_name = var.lambda_db
+  dynamodb_function_file = var.db_py
+  dynamodb_function_zip = var.db_zip
   
-  rest_api            = module.cloud_resume.rest_api
-  rest_api_parent     = module.cloud_resume.rest_api_parent
-  api_domain_name     = module.cloud_resume.api_domain_name
+  sns_description = var.lambda_sns_desc
+  sns_function_name = var.lambda_sns
+  sns_function_file = var.sns_py
+  sns_function_zip = var.sns_zip
   
-  for_each            = var.api_lambda
-  api_path_part       = each.value.api_path_part 
-  function_name       = each.value.function_name
-  lambda_description  = each.value.lambda_description
-  lambda_folder       = each.value.lambda_folder
-  lambda_resource     = each.value.lambda_resource
-  policy_name         = each.value.policy_name
-  policy_actions      = each.value.policy_actions
-  caller_identity          = data.aws_caller_identity.current.account_id
-}
+  dynamodb_actions = [
+    "dynamodb:GetItem",
+    "dynamodb:UpdateItem"
+  ]
+
+  sns_actions = [
+    "sns:Publish",
+    "sns:ListTopics"
+  ]
+
+  # S3
+  bucket_name = var.bucket_name
+  bucket_policy_sid = "AllowCloudFrontServicePrincipalReadOnly"
+  assets_path = var.assets_path
+  html_path = var.html_path
+  pdf_path = var.pdf_path
+
+  # SNS
+  topic_name = var.api_sns
+  topic_display_name = var.topic_display
+  topic_endpoint = var.my_email
+
+  # Route53
+  blog = var.blog
+  record_type = "CNAME"
+  record_list = var.record_list
+  }
