@@ -1,0 +1,39 @@
+api_db = "myviews"
+api_description = "This is my API"
+api_domain = "api.example.com"
+api_name = "MyExampleAPI"
+api_sns = "sendmeemails"
+assets_path = "../public/asset_files"
+blog = "myblog.example.com"
+bucket_name = "myuniquebucketname"
+db_py = "../lambda/Update_Table/lambda_function.py"
+db_zip = "../lambda/Update_Table/lambda_function_payload.zip"
+hash_key = "MyHashKey"
+html_path = "../public/html_files"
+iam_dynamodb_policy = "NameOfLambdaDynamoDBPolicy"
+iam_sns_policy = "NameOfLambdaSNSPolicy"
+lambda_db = "MyDynamoDBLambdaFunctionName"
+lambda_db_desc = "This is my description for the lambda function"
+lambda_sns = "MySNSLambdaFunctionName"
+lambda_sns_desc = "This is my description for the lambda function"
+my_domain = "example.com"
+my_email = "test@example.com"
+origin_id = "my_origin_id"
+pdf_path = "../public/pdf_files"
+record_list = "Route53_alias"
+sns_py = "../lambda/Contact_Me/lambda_function.py"
+sns_zip = "../lambda/Contact_Me/lambda_function_payload.zip"
+table_item = {
+  "hash_key": {
+    "N": "69"
+  },
+  "My_value": {
+    "N": "0"
+  }
+}
+table_name = "DynamoDB Table Name"
+topic_display = "How I want my sns topic FROM to be displayed"
+
+
+
+
