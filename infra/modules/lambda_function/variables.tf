@@ -36,3 +36,8 @@ variable "policy_name" {
   description = "(Optional) The name of the role policy. If omitted, Terraform will assign a random, unique name."
   type = string
 }
+
+variable "api_gateway_arn" {
+  description = "Source ARN for API Gateway"
+  type = string
+}

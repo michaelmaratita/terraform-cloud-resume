@@ -38,7 +38,13 @@ module "api_deployment" {
   api_id = module.api.id
   redeployment = [
     module.api_resource_dynamodb.integration_response,
-    module.api_resource_sns.integration_response
+    module.api_resource_dynamodb.method,
+    module.api_resource_dynamodb.integration,
+    module.api_resource_dynamodb.api_resource,
+    module.api_resource_sns.integration_response,
+    module.api_resource_sns.method,
+    module.api_resource_sns.integration,
+    module.api_resource_sns.api_resource
     ]
   stage_name = "Production"
   domain_name = module.api_gateway_domain.domain_name
@@ -47,7 +53,7 @@ module "api_deployment" {
 module "api_gateway_domain" {
   source = "../aws/api_gateway/api_gateway_domain"
 
-  certificate_arn = module.acm.arn
+  certificate_arn = module.acm.validation_certificate_arn
   domain_name     = var.api_domain_name
 }
 
@@ -109,6 +115,7 @@ module "lambda_dynamodb" {
   file_name     = var.dynamodb_function_file
   zip_file_name = var.dynamodb_function_zip
   policy_name   = var.dynamodb_policy_name
+  api_gateway_arn = "${module.api.execution_arn}/*/POST${module.api_resource_dynamodb.path}"
   actions       = var.dynamodb_actions
 
   resource = [module.dynamodb.arn]
@@ -117,14 +124,15 @@ module "lambda_dynamodb" {
 module "lambda_sns" {
   source = "../lambda_function"
 
-  description   = var.sns_description
-  function_name = var.sns_function_name
-  file_name     = var.sns_function_file
-  zip_file_name = var.sns_function_zip
-  policy_name   = var.sns_policy_name
-  actions       = var.sns_actions
+  description     = var.sns_description
+  function_name   = var.sns_function_name
+  file_name       = var.sns_function_file
+  zip_file_name   = var.sns_function_zip
+  policy_name     = var.sns_policy_name
+  api_gateway_arn = "${module.api.execution_arn}/*/POST${module.api_resource_sns.path}"
+  actions         = var.sns_actions
 
-  resource = [module.sns.topic_arn]
+  resource = ["*"]
 }
 
 # Amazon Simple Storage Service (S3)
@@ -132,19 +140,19 @@ module "upload_assets" {
   source = "../aws/s3/s3_object"
 
 #
-  for_each     = fileset("${var.assets_path}", "**/**")
-  bucket_name  = var.bucket_name
+  for_each     = fileset("../public/asset_files", "**")
+  bucket_name  = module.static_website.s3_id
   key          = "/${each.key}"
-  file_source  = "${var.assets_path}}/${each.value}"
+  file_source  = "../public/asset_files/${each.value}"
   content_type = lookup(local.mime_types, regex("\\.[^.]+$", each.value), "text/html")
-  etag         = filemd5("${var.assets_path}/${each.key}")
+  etag         = filemd5("../public/asset_files/${each.key}")
 }
 
 module "upload_html" {
   source = "../aws/s3/s3_object"
 
   for_each     = fileset("${var.html_path}", "**")
-  bucket_name  = var.bucket_name
+  bucket_name  = module.static_website.s3_id
   key          = "/${each.key}"
   file_source  = "${var.html_path}/${each.value}"
   content_type = "text/html"
@@ -155,7 +163,7 @@ module "upload_pdf" {
   source = "../aws/s3/s3_object"
 
   for_each     = fileset("${var.pdf_path}", "**")
-  bucket_name  = var.bucket_name
+  bucket_name  = module.static_website.s3_id
   key          = "/${each.key}"
   file_source  = "${var.pdf_path}/${each.value}"
   content_type = "application/pdf"
@@ -176,35 +184,40 @@ module "sns" {
 module "api_record" {
   source = "../aws/route53"
 
-  zone_id      = data.aws_route53_zone.my_domain.zone_id
-  name         = module.api_gateway_domain.domain_name
-  ttl          = 900
-  records_list = [ "${module.api_gateway_domain.cloudfront_domain_name}."]
+  zone_id       = data.aws_route53_zone.my_domain.zone_id
+  name          = module.api_gateway_domain.domain_name
+  alias_name    = module.api_gateway_domain.cloudfront_domain_name
+  alias_zone_id = module.api_gateway_domain.cloudfront_zone_id
+
+  depends_on = [ module.acm.validation_certificate_arn ]
 }
 
 module "blog" {
-  source = "../aws/route53"
+  source = "../aws/route53/CNAME"
 
   zone_id      = data.aws_route53_zone.my_domain.zone_id
   name         = var.blog
   type         = var.record_type
-  records_list = [ var.record_list ]
+  records_list = var.record_list
 }
 
 module "cloudfront_record" {
   source = "../aws/route53"
 
-  zone_id      = data.aws_route53_zone.my_domain.zone_id
-  name         = var.my_domain
-  ttl          = 900
-  records_list = [ "${module.static_website.cloudfont_domain_name}."]
+  zone_id       = data.aws_route53_zone.my_domain.zone_id
+  name          = var.my_domain
+  alias_name    = module.static_website.cloudfont_domain_name
+  alias_zone_id = module.static_website.cloudfont_hosted_zone_id
+
+  depends_on = [module.acm.validation_certificate_arn ]
 }
 
 module "www_blog" {
-  source = "../aws/route53"
+  source = "../aws/route53/CNAME"
 
   zone_id      = data.aws_route53_zone.my_domain.zone_id
   name         = "www.${var.blog}"
   type         = var.record_type
-  records_list = [ var.record_list ]
+  records_list = var.record_list
+
 }

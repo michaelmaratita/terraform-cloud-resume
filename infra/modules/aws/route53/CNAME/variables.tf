@@ -3,6 +3,18 @@ variable "name" {
   type = string
 }
 
+variable "records_list" {
+  description = "(Required for non-alias records) A string list of records. e.g ['hasnode.network']"
+  type = string
+  nullable = true
+}
+
+variable "ttl" {
+  description = "Time To Live value for DNS record"
+  default = 30
+  type = number
+}
+
 variable "type" {
   description = "Type of DNS record"
   default = "A"
@@ -13,13 +25,3 @@ variable "zone_id" {
   description = "Passed value from data.aws_route53_zone.my_domain.zone_id"
   type = string
 }
-
-variable "alias_name" {
-  description = "Alias for A record"
-  type = string
-}
-
-variable "alias_zone_id" {
-  description = "Zone ID for A record"
-}
-
