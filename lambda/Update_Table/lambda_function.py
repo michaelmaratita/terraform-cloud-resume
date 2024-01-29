@@ -16,7 +16,7 @@ def getViewerCount():
         TableName = 'viewer_count',
         Key={
             'Id': {
-                'N': '0'
+                'N': '69420'
             }
         },
         AttributesToGet=[
@@ -27,14 +27,13 @@ def getViewerCount():
     
 
 def updateTable():
-    old_count = int(getViewerCount())
-    viewer_count = old_count + 1
+    viewer_count = int(getViewerCount()) + 1
     
     client.update_item(
         TableName = 'viewer_count',
         Key={
             'Id': {
-                'N': '0'
+                'N': '69420'
             }
         },
        AttributeUpdates = {
