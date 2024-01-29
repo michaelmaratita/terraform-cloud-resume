@@ -64,7 +64,7 @@ module "resume_site" {
   pdf_path = var.pdf_path
 
   # SNS
-  topic_name = "${var.api_sns}me"
+  topic_name = var.topic_name
   topic_display_name = var.topic_display
   topic_endpoint = var.my_email
 
