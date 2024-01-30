@@ -118,6 +118,11 @@ variable "pdf_path" {
   type = string
 }
 
+variable "topic_name" {
+  description = "Name for SNS Topic"
+  type = string
+}
+
 variable "topic_display" {
   description = "Display name for SNS Topic. Displays as FROM on email"
   type = string
