@@ -140,12 +140,12 @@ module "upload_assets" {
   source = "../aws/s3/s3_object"
 
 #
-  for_each     = fileset("../public/asset_files", "**")
+  for_each     = fileset("${assets_path}", "**")
   bucket_name  = module.static_website.s3_id
   key          = "/${each.key}"
-  file_source  = "../public/asset_files/${each.value}"
+  file_source  = "${assets_path}/${each.value}"
   content_type = lookup(local.mime_types, regex("\\.[^.]+$", each.value), "text/html")
-  etag         = filemd5("../public/asset_files/${each.key}")
+  etag         = filemd5("${assets_path}/${each.key}")
 }
 
 module "upload_html" {

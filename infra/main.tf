@@ -59,10 +59,10 @@ module "resume_site" {
   # S3
   bucket_name = var.bucket_name
   bucket_policy_sid = "AllowCloudFrontServicePrincipalReadOnly"
-  # assets_path = var.assets_path
+  assets_path = var.assets_path
   html_path = var.html_path
   pdf_path = var.pdf_path
-
+  
   # SNS
   topic_name = "${var.api_sns}me"
   topic_display_name = var.topic_display
