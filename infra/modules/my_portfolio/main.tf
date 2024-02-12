@@ -139,7 +139,6 @@ module "lambda_sns" {
 module "upload_assets" {
   source = "../aws/s3/s3_object"
 
-#
   for_each     = fileset("../public/asset_files", "**")
   bucket_name  = module.static_website.s3_id
   key          = "/${each.key}"
