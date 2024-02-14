@@ -1,5 +1,5 @@
 module "resume_site" {
-  source = "./modules/my_portfolio"
+  source = "github.com/michaelmaratita/Terraform-Modules/modules/portfolio_website"
 
   # AWS Certificate Manager (ACM)
   my_domain                 = var.my_domain
