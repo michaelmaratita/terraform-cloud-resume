@@ -8,8 +8,8 @@ window.onload = function() {
 	}).then(res => res.json())
         .then(data => {
 			console.log(data.views)
-            const viewer_count = data.views
-            const viewers = document.getElementById('viewers');
-            viewers.innerHTML = `${viewer_count}`
+            const view_count = data.views
+            const views = document.getElementById('views');
+            views.innerHTML = `${view_count}`
         });
 };
